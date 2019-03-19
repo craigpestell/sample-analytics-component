@@ -1,4 +1,5 @@
 import Backbone from 'backbone';
+import Analytics from '@component/analytics';
 import Model from '../models/sample-analytics-component';
 import template from '../../templates/views/sample-analytics-component.hbs';
 
@@ -22,6 +23,7 @@ export default Backbone.View.extend({
     // eslint-disable-next-line no-console
     console.log('click happened');
 
+    Analytics.track('sample-analytics-component:notifyUser', this.model);
     // eslint-disable-next-line no-alert
     alert('it did the thing');
   },
